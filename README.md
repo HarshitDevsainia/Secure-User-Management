@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# 🔐 React Authentication & Users Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + TypeScript application demonstrating authentication (login/signup) and user data fetching using Redux Toolkit, Async Thunks, and Tailwind CSS.
 
-Currently, two official plugins are available:
+This project uses public APIs for learning and demo purposes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Authentication → ReqRes API
+- Users List → JSONPlaceholder API
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔑 Authentication
 
-## Expanding the ESLint configuration
+- Login & Signup using Redux Toolkit
+- Token-based authentication
+- Persistent login using localStorage
+- Logout functionality
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 👥 Users Dashboard
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Fetch users using createAsyncThunk
+- Global state management via Redux
+- Loading & error handling
+- Responsive grid UI
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🧪 Testing
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Unit tests for authentication and API logic
+- Written using Test Driven Development (TDD) approach
+- Jest + React Testing Library
+
+## 🌐 APIs Used
+
+### 🔹 Authentication (ReqRes)
+
+```bash
+POST https://reqres.in/api/login
+POST https://reqres.in/api/register
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Example credentials:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+{
+  "email": "eve.holt@reqres.in",
+  "password": "cityslicka"
+}
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔹 Users Data (JSONPlaceholder)
+
+```bash
+GET https://jsonplaceholder.typicode.com/users
+```
+
+## 🧪 Testing (TDD Approach)
+
+### 🔹 What is Tested
+
+- Authentication success & failure
+- Async thunk API calls
+- Redux reducers & actions
+
+### 🔹 Run Tests
+
+```bash
+npm test
+```
+
+## ▶️ Getting Started
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/react-redux-auth-dashboard.git
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Start Development Server
+
+```bash
+npm run dev
 ```
